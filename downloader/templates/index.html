@@ -17,8 +17,21 @@
         <h2>YTDownloader</h2>
         <form method="POST">
             {% csrf_token %}
-            <input type="text" name="url" placeholder="YouTube URL" required>
-            <button type="submit">Download</button>
+            <input type="text" name="url" value="{% if not download_Success %}{{ request.POST.url }}{% endif %}" placeholder="YouTube URL" required>
+            <button type="submit" name="action" value="fetch">Fetch</button>
+            <button type="button" class="clear" onclick="window.location.href = window.location.pathname;">Clear</button>
+
+            {% if video_Info %}
+                <div class="video-info">
+                    <h3>{{ video_Info.title }}</h3>
+                    <img src="{{ video_Info.thumbnail }}" alt="Video Thumbnail">
+                </div>
+
+            {% endif %}
+
+            {% if video_Info %}
+                <button type="submit" name="action" value="download" class="download">Download</button>  
+            {% endif %}
         </form>
     </div>
 
