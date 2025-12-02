@@ -1,16 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YouTube Video Downloader</title>
+    <title>YTDownloader</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style/style.css' %}">
+    <script src="{% static 'js/script.js' %}" defer></script>
 </head>
+
 <body>
-    <h1>Download YouTube Video</h1>
-    <form method="POST">
-        {% csrf_token %}
-        <input type="text" name="url" placeholder="Enter YouTube URL" required>
-        <button type="submit">Download</button>
-    </form>
+
+    <div class="card">
+        <h2>YTDownloader</h2>
+        <form method="POST">
+            {% csrf_token %}
+            <input type="text" name="url" placeholder="YouTube URL" required>
+            <button type="submit">Download</button>
+        </form>
+    </div>
+
+    <div id="notification" class="notification">
+        Download Success
+    </div>
+
+    <script>
+        {% if download_Success %}
+        window.onload = function () {
+            showNotification();
+        };
+        {% endif %}
+    </script>
+
 </body>
+
 </html>
