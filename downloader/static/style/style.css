@@ -31,7 +31,7 @@ h2 {
 }
 
 input[type="text"] {
-    width: 100%;
+    width: 50%;
     padding: 12px;
     margin-bottom: 20px;
     border: 2px solid #ddd;
@@ -45,31 +45,34 @@ input[type="text"]:focus {
     border: 2px solid #FF0000;
 }
 
-.fetch, .clear {
-    padding: 8px;
-    background-color: #FF0000;
-    color: white;
+.card .fetch{
+    padding: 10px;
+    background-color: white;
     border: none;
     border-radius: 5px;
-    font-size: 15px;
+    font-size: 20px;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
-.fetch:hover {
-    background-color: #973939;
+.card .fetch:hover {
+    background-color: #000000;
+    color: #ffffff
 }
 
-.clear {
-    margin-left: 5px;
-    background-color: #000000; 
-    color: white;
+.card .clear {
+    padding: 10px;
+    background-color: white;
     border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-.clear:hover {
-    background-color: #4e4d4d;
-
+.card .clear:hover {
+    background-color: #000000;
+    color: #ffffff;
 }
 
 .notification {

@@ -20,8 +20,12 @@
         <form method="POST">
             {% csrf_token %}
             <input type="text" name="url" value="{% if not download_Success %}{{ request.POST.url }}{% endif %}" placeholder="URL.." required>
-            <button type="submit" class="fetch" name="action" value="fetch">Fetch</button>
-            <button type="button" class="clear" onclick="window.location.href = window.location.pathname;">Clear</button>
+            <button type="submit" class="fetch" name="action" value="fetch">
+                <i class="uil uil-search-alt"></i>
+            </button>
+            <button type="button" class="clear" onclick="window.location.href = window.location.pathname;">
+                <i class="uil uil-redo"></i>
+            </button>
 
             {% if video_Info %}
                 <div class="video-info">
