@@ -45,7 +45,7 @@ input[type="text"]:focus {
     border: 2px solid #FF0000;
 }
 
-button {
+.fetch, .clear {
     padding: 8px;
     background-color: #FF0000;
     color: white;
@@ -56,11 +56,11 @@ button {
     transition: background-color 0.3s;
 }
 
-button:hover {
+.fetch:hover {
     background-color: #973939;
 }
 
-button.clear {
+.clear {
     margin-left: 5px;
     background-color: #000000; 
     color: white;
@@ -153,8 +153,16 @@ button.clear {
     cursor: pointer;
 }
 
-.card .download{
-    margin-top: 10px;
+.download-icon-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 22px;
+    padding: 5px;
+}
+
+.download-icon-btn:hover {
+    color: #008000;
 }
 
 @media (max-width: 600px) {
