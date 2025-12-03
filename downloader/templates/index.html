@@ -29,6 +29,37 @@
 
             {% endif %}
 
+            {% if formats %}
+                <div class="format-table-wrapper">
+                    <table class="format-info">
+                        <thead>
+                            <tr>
+                                <th>Select</th>
+                                <th>Extension</th>
+                                <th>Resolution</th>
+                                <th>FPS</th>
+                                <th>Size</th>
+                                <th>Video Codec</th>
+                                <th>Audio Codec</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for f in formats %}
+                            <tr>
+                                <td><input type="radio" name="format_id" value="{{ f.format_id }}" required></td>
+                                <td>{{ f.ext }}</td>
+                                <td>{{ f.resolution|default:"-" }}</td>
+                                <td>{{ f.fps|default:"-" }}</td>
+                                <td>{% if f.filesize %}{{ f.filesize|filesizeformat }}{% else %}Unknown{% endif %}</td>
+                                <td>{{ f.video_codec }}</td>
+                                <td>{{ f.audio_codec }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            {% endif %}
+
             {% if video_Info %}
                 <button type="submit" name="action" value="download" class="download">Download</button>  
             {% endif %}
