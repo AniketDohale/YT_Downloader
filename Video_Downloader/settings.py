@@ -50,7 +50,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'YT_Downloader.urls'
+ROOT_URLCONF = 'Video_Downloader.urls'
 
 TEMPLATES = [
     {
@@ -67,18 +67,18 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'YT_Downloader.wsgi.application'
+WSGI_APPLICATION = 'Video_Downloader.wsgi.application'
 
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 
 # Password validation

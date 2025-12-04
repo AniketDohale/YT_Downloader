@@ -14,7 +14,6 @@ def download_Video(request):
         url = request.POST.get('url')
         action = request.POST.get('action')
         selected_Format = request.POST.get('format_id')
-        print(action)
         
         if url:
             ydl_opts = {
@@ -36,9 +35,14 @@ def download_Video(request):
 
                     formats = []
                     for f in info_Dict.get('formats', []):
+                        ext = f.get('ext')
+
+                        if ext == 'mhtml':
+                            continue
+
                         formats.append({
                             'format_id': f.get('format_id'),
-                            'ext': f.get('ext'),
+                            'ext': ext,
                             'resolution': f.get('resolution') or f.get('height'),
                             'fps': f.get('fps'),
                             'filesize': f.get('filesize'),
